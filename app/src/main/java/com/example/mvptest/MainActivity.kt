@@ -3,9 +3,9 @@ package com.example.mvptest
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.mvptest.Presenter.ILoginPresenter
-import com.example.mvptest.Presenter.LoginPresenter
-import com.example.mvptest.View.ILoginView
+import com.example.mvptest.presenter.ILoginPresenter
+import com.example.mvptest.presenter.LoginPresenter
+import com.example.mvptest.view.ILoginView
 import com.example.mvptest.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), ILoginView {
@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity(), ILoginView {
         b = ActivityMainBinding.inflate(layoutInflater)
         setContentView(b.root)
 
-
         //Init
         loginPresenter = LoginPresenter(this)
 
@@ -29,12 +28,10 @@ class MainActivity : AppCompatActivity(), ILoginView {
     }
 
     override fun onLoginSuccess(message: String) {
-        Toast.makeText(this, message,Toast.LENGTH_LONG).show()
-        // Toasty.success
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
     override fun onLoginError(message: String) {
-        Toast.makeText(this, message,Toast.LENGTH_LONG).show()
-        // Toasty.error
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 }

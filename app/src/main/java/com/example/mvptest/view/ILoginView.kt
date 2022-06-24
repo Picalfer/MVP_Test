@@ -1,4 +1,4 @@
-package com.example.mvptest.View
+package com.example.mvptest.view
 
 interface ILoginView {
     fun onLoginSuccess(message: String)

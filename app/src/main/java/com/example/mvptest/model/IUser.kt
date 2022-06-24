@@ -1,4 +1,4 @@
-package com.example.mvptest.Model
+package com.example.mvptest.model
 
 interface IUser {
     val email: String
