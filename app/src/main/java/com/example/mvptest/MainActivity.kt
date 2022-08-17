@@ -10,13 +10,12 @@ import com.example.mvptest.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), ILoginView {
 
-    internal lateinit var loginPresenter: ILoginPresenter
-    lateinit var b: ActivityMainBinding
+    private lateinit var loginPresenter: ILoginPresenter
+    private lateinit var b: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        b = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(b.root)
+        b = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
         //Init
         loginPresenter = LoginPresenter(this)

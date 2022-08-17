@@ -1,9 +1,9 @@
 package com.example.mvptest.presenter
 
-import com.example.mvptest.model.User
 import com.example.mvptest.view.ILoginView
+import com.example.mvptest.model.User
 
-class LoginPresenter(internal var iLoginView: ILoginView) : ILoginPresenter {
+class LoginPresenter(private var iLoginView: ILoginView) : ILoginPresenter {
     override fun onLogin(email: String, password: String) {
         val user = User(email, password)
         when (user.isDataValid()) {
